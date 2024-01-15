@@ -4,11 +4,6 @@
 
 <div class="container">
 
-    @if (session('success'))
-    <div class="alert alert-info  text-center" style="width: 100rem; margin: auto">
-        {{session('success')}}
-    </div>
-    @endif
     <div class="section1">
     <section id="hero" class="d-flex align-items-center">
 
@@ -49,7 +44,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="email">Adresse Email:</label>
-                        <input type="email" name="email" id="email" placeholder="Votre réponse" class="form-control my-3">
+                        <input type="email" name="email" id="email" placeholder="Votre réponse" class="form-control my-3" required>
                     </div>
                     <div class="form-group">
                         <label for="">Nom:</label>
@@ -58,17 +53,17 @@
 
                     <div class="form-group">
                         <label for="">Prenom:</label>
-                        <input type="text" name="prenom" id="" placeholder="Votre réponse" class="form-control my-3">
+                        <input type="text" name="prenom" id="" placeholder="Votre réponse" class="form-control my-3" required>
                     </div>
 
                     <div class="form-group">
                         <label for="">Téléphone</label>
-                        <input type="tel" name="telephone" id="" placeholder="Votre réponse" class="form-control my-3">
+                        <input type="tel" name="telephone" id="" placeholder="Votre réponse" class="form-control my-3" required>
                     </div>
 
                     <div class="form-group">
                         <label for="">Adresse Domicile</label>
-                        <input type="text" name="adresse" id="" placeholder="Votre réponse" class="form-control my-3">
+                        <input type="text" name="adresse" id="" placeholder="Votre réponse" class="form-control my-3" required>
                     </div>
 
                     <div class="form-group">
@@ -93,13 +88,13 @@
                     </div>
                     <div class="form-group">
                         <label for="myfile">Télécharger votre CV:</label>
-                        <input type="file" id="myfile" name="myfile" accept = "application/pdf" class="form-control my-3">
+                        <input type="file" id="myfile" name="myfile" accept = "application/pdf" class="form-control my-3" required>
 
                     </div>
 
                     <div class="form-group">
                         <label for="">Question/Suggestion/Commentaire</label>
-                        <input type="text" name="question" id="" placeholder="Votre réponse" class="form-control my-3">
+                        <input type="text" name="question" id="" placeholder="Votre réponse" class="form-control my-3" required>
                     </div>
 
                     <div class="form-group">
@@ -107,6 +102,21 @@
                         {{-- <button class="btn text-danger float-end mt-2" >Effacer le formumaire</button> --}}
                     </div>
                 </form>
+                @if (session('success'))
+              <script>
+               swal("Success","{{ Session::get('success')}}", 'success',{
+                 button:true,
+                 button:"Ok",
+               });
+              </script>
+              @else
+              <!-- <script>
+                swal("Echec","{{ Session::get('success')}}", 'error',{
+                 button:true,
+                 button:"Ok",
+               });
+              </script> -->
+          @endif
             </div>
         </div>
     </div>
