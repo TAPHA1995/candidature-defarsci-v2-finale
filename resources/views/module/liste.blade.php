@@ -13,16 +13,22 @@
             </div>
         </div>
 
-        @if ($message = Session::get('success'))
-            <div class="alert alert-success">
-                <p>{{ $message }}</p>
-            </div>
-        @endif
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+         @if(session('success'))
+          <script>
+           swal("Success","{{ Session::get('success')}}", 'success',{
+             button:true,
+             button:"Ok",
+           });
+          </script>
+          @endif
 
         <table class="table table-bordered">
             <tr>
                 <th>ID</th>
                 <th>Libelé</th>
+                <th>Description</th>
                 <th width="280px">Actions</th>
             </tr>
             @foreach ($module as $module)
@@ -30,6 +36,7 @@
 
                 <td>{{ $module->id }}</td>
                 <td>{{ $module->libele }}</td>
+                <td>{{ $module->description }}</td>
                 <td class="d-flex justify-content-end">
                     <form action="{{ route('delete-module',$module->id ) }}" method="POST"> 
                         <a href="{{route('edit-module',$module->id )}}" class="btn btn-success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>

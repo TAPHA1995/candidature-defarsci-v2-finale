@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('modules', function (Blueprint $table) {
             $table->id();
             $table->string('libele');
+            $table->string('desription');
             $table->timestamps();
         });
     }

@@ -1,11 +1,22 @@
 @extends('layouts.front')
 <br><br><br><br><br>
+<br><br><br><br><br>
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    @if(session('success'))
+              <script>
+               swal("Success","{{ Session::get('success')}}", 'success',{
+                 button:true,
+                 button:"Ok",
+               });
+              </script>
+              @endif
     <div class="py-12 px-4">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -24,4 +35,5 @@
             </div>
         </div>
     </div>
+           
 

@@ -1,7 +1,16 @@
 @extends('layouts.front')
 
 @section('content')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+@if (session('success'))
+              <script>
+               swal("Success","{{ Session::get('success')}}", 'success',{
+                 button:true,
+                 button:"Ok",
+               });
+              </script>
+              @endif
 <div class="container">
     <div class="row my-5">
         <div class="col-lg-12 margin-tb">
@@ -37,7 +46,7 @@
                 </div>
             </div>
         </div>
-            {{-- <div class="row">
+             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
                         <strong>Description:</strong>
@@ -45,7 +54,7 @@
                         <!-- <input type="text" name="description" class="form-control" > -->
                     </div>
                 </div>
-            </div> --}}
+            </div> 
         <div class="col-xs-12 col-sm-12 col-md-12 ">
                 <button type="submit" class="btn btn-primary my-5">Soumettre</button>
         </div>

@@ -18,9 +18,6 @@
             <div class="badge text-wrap"><h2 class="text-black fs-6">DG</h2> <div class="border-info bg-info rounded-circle" style="width: 50px; height: 50px; margin:auto"><p class="text-black" style="font-size:24px; padding:10px">{{ $dg }}</p></div></div>
             <div class="badge text-wrap"><h2 class="text-black fs-6">Au </h2><div class="border-info bg-info rounded-circle" style="width: 50px; height: 50px; margin:auto"><p class="text-black" style="font-size:24px; padding:10px">{{ $other }}</p></div></div>
         </div>
-
-
-
     <div class="card mt-5" >
         <div class="card-header bg-info text-black">Liste des Candidats</div>
         <div class="card-body">
@@ -49,8 +46,6 @@
                         <td>{{ $candidats->domaine }}</td>
                         {{-- <td>{{ number_format($candidat->pourcentage, 2) }}%</td> --}}
                         {{-- {{ number_format(floatval($value ?? ''), 2, ',', ' ') }} --}}
-
-
                         <td>
                             <a href="{{route('edit-candidat',$candidats->id )}}" class="btn btn-success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                             <a onclick="return confirm('Souhaitez-vous le supprimer')" href="{{route('delete-candidat',$candidats->id)}}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>

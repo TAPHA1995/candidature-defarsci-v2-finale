@@ -88,7 +88,7 @@
                     </div>
                     <div class="form-group">
                         <label for="myfile">Télécharger votre CV:</label>
-                        <input type="file" id="myfile" name="myfile" accept = "application/pdf" class="form-control my-3" required>
+                        <input type="file" id="myfile" name="myfile" accept = "application/pdf" class="form-control my-3"  required>
 
                     </div>
 
@@ -109,14 +109,7 @@
                  button:"Ok",
                });
               </script>
-              @else
-              <!-- <script>
-                swal("Echec","{{ Session::get('success')}}", 'error',{
-                 button:true,
-                 button:"Ok",
-               });
-              </script> -->
-          @endif
+              @endif
             </div>
         </div>
     </div>
