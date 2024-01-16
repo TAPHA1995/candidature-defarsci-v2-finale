@@ -50,11 +50,11 @@
                             <option value="Autres">Autres</option>
                         </select>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="myfile">Télécharger votre CV:</label>
                         <input type="file" id="myfile" name="myfile" accept = "application/pdf" class="form-control my-3" value="{{$candidat->mylfie}}" required>
 
-                    </div>
+                    </div> -->
 
                     <div class="form-group">
                         <label for="">Question/Suggestion/Commentaire</label>
