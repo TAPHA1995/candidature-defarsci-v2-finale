@@ -1303,13 +1303,13 @@ color: #fff;
 }
 
 @media (max-width: 991px) {
-/* .mobile-nav-toggle {
+.mobile-nav-toggle {
 display: block;
 }
 
 .navbar ul {
 display: none;
-} */
+} 
 }
 
 </style>
